@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let nbClasse = parseInt(prompt("entrer les nombres des classes"));
+      let classes = [];
+      let les_cotes = [];
+      let bulletins = [];
+      for (let index = 0; index < nbClasse; index++) {
+        let classe = {};
+        classe.nbreEleve = parseInt(prompt("entrer le nombre d'eleves"));
+        classe.design = prompt("Entrer le nom de la classe");
+        classe.nb_cours = parseInt(prompt("Entrer le nombre des cours"));
+        classes.push(classe);
+      }
+
+      classes.forEach((el) => {
+        let bult = {};
+        let points = [];
+        for (let index = 0; index < el.nbreEleve; index++) {
+          bult.nom_eleve = prompt("entrer le nom  de l'eleve : ");
+          alert("Vous allez saisir les points pour l'eleve " + bult.nom_eleve);
+
+          for (let j = 0; j < el.nb_cours; j++) {
+            let point = parseFloat(
+              prompt("Entrer le point obtenu pour le cours " + (j + 1))
+            );
+            points.push(point);
+          }
+          bult.points = points;
+          bulletins.push(bult);
+        }
+      });
+      console.log(bulletins);
+      bulletins.forEach((b) => {
+        let s = 0;
+        b.points.forEach((el) => {
+          s = s + el;
+        });
+        console.log(
+          "resultat de l'eleve : " + b.nom_eleve + "\n ___________" + "\n" + s
+        );
+      });
+    </script>
+  </body>
+</html>

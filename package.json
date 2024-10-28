@@ -1,0 +1,15 @@
+{
+  "name": "app_gestion",
+  "version": "1.0.0",
+  "description": "go",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "exec": "nodemon index.js"
+  },
+  "author": "henock",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
